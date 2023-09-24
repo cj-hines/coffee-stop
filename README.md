@@ -17,9 +17,9 @@ User can view previous cafes they marked and see what their initial impressions.
 User can select different options for customizing their coffee and provides a visual representation for the barista.
 
 <p float="left">
-	<img src="https://github.com/cj-hines/coffee-stop/blob/main/siteimages/capacity.jpeg" height="50%" width="50%" >
-	<img src="https://github.com/cj-hines/coffee-stop/blob/main/siteimages/order.JPG" height="50%" width="50%" >
-	<img src="https://github.com/cj-hines/coffee-stop/blob/main/siteimages/history.JPG" height="50%" width="50%" >
+	<img src="https://github.com/cj-hines/coffee-stop/blob/main/siteimages/capacity.jpeg" height="30%" width="30%" >
+	<img src="https://github.com/cj-hines/coffee-stop/blob/main/siteimages/order.JPG" height="30%" width="30%" >
+	<img src="https://github.com/cj-hines/coffee-stop/blob/main/siteimages/history.JPG" height="30%" width="30%" >
 </p>
 
 ## The Developers
