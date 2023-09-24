@@ -16,9 +16,9 @@ User can view previous cafes they marked and see what their initial impressions.
 #### Adding a Custom Drink
 User can select different options for customizing their coffee and provides a visual representation for the barista.
 
-<img src="https://github.com/cj-hines/coffee-stop/blob/main/siteimages/capacity.jpeg" height="60" width="60" >
-![alt text](https://github.com/cj-hines/coffee-stop/blob/main/siteimages/order.JPG?raw=true)
-![alt text](https://github.com/cj-hines/coffee-stop/blob/main/siteimages/history.JPG?raw=true)
+<img src="https://github.com/cj-hines/coffee-stop/blob/main/siteimages/capacity.jpeg" height="120" width="60" >
+<img src="https://github.com/cj-hines/coffee-stop/blob/main/siteimages/order.JPG" height="120" width="60" >
+<img src="https://github.com/cj-hines/coffee-stop/blob/main/siteimages/history.JPG" height="120" width="60" >
 
 ## The Developers
 #### Ria 
