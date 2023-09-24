@@ -1,0 +1,157 @@
+/* Main color scheme */
+:root {
+    --primary: #413620;
+    --secondary: #9C6615;
+    --accent: beige;
+    --highlight: #995D81;
+  }
+  
+  /* General styles */
+  body {
+    font-family: "Optima", sans-serif;
+    background-color: var(--accent);
+    color: var(--primary);
+  }
+  
+  .slogan {
+    font-size: 1.25rem;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    font-weight: light;
+    font-family:'Avenir', sans-serif;
+  }
+  
+  .navbar {
+    background-color: var(--primary);
+  }
+  
+  .navbar-brand {
+    color: white;
+  }
+  
+  .nav-link {
+    color: var(--accent);
+  }
+  
+  .nav-link:hover {
+    color: var(--highlight);
+  }
+
+  .container-login{
+    background-color: var(--accent);
+    background-image: url("/../images/login-back.jpeg");
+    padding: 10%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+  }
+  .login-details{
+    background-color: white;
+    width: 100%;
+    padding: 5%;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    
+    
+  }
+  .login-button{
+    width: 50%;
+    border-radius: 5px;
+    border-color: #9C6615;
+    background-color: #C4A484;
+    color: white;
+    font-weight: bold;
+    
+  }
+
+  .cafe-list {
+    max-height: 600px;
+    overflow-y: auto;
+  }
+
+  .cafe {
+    background-color: #E6D1C0;
+    color: #333;
+    padding: 3%;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.2s ease-in-out;
+    font-size: large;
+    border-image: url("images/login-back.jpeg");
+  }
+
+  .cafe:active {
+    background-color: #995D81;
+  }
+
+  .coffee-list {
+    display: none;
+    background-color: #e7d8cb;
+    padding: 10px;
+    margin-top: 5%;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
+
+  .coffee {
+    list-style: none;
+    margin: 0;
+    padding: 3%;
+    cursor: default;
+  }
+
+  .active {
+    display: block;
+  }
+  .btn btn-primary{
+    background-color: #9C6615;
+    color: aliceblue;
+  }
+  #flames-logo{
+    display: inline-block;
+    margin: 15px; /* margin: 20px was off */
+    /* float: left; */
+    height: 60px;
+    width: auto; /* correct proportions to specified height */
+    border-radius: 50%; /* makes it a circle */
+  }
+
+  /* Media query for mobile devices */
+  @media (max-width: 767px) {
+    h1 {
+      font-size: 2rem;
+    }
+  
+    .slogan {
+      font-size: 1rem;
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  #scroll-indicator {
+    position: absolute;
+    bottom: 30px;
+    left: 90%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+  #scroll-indicator:before {
+    content: "";
+    border-style: solid;
+    border-width: 0.25em 0.25em 0 0;
+    border-color: white;
+    display: inline-block;
+    padding: 0.25em;
+    transform: rotate(135deg);
+  }
+  

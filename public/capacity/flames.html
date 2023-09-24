@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/vendors/bootstrap/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="/css/main.css" />
+    <script src="/vendors/jquery/jquery-3.3.1.min.js"></script>
+    <script src="/vendors/jquery-ui/jquery-ui.min.js"></script>
+    <title> Flames Coffee | Coffee Stop by Team 20</title>
+  </head>
+	<style>
+    h1 {
+      text-align: center;
+    }
+    .back-btn {
+        background-color: #403620;
+        color: #fff;
+        border: 1px solid #fff;
+        padding: 10px;
+        margin-bottom: 20px;
+        text-decoration: none;
+        border-radius: 10px;
+        box-shadow: 2px 2px 2px rgba(0,0,0,0.3);
+        transition: all 0.3s ease;
+        text-align: center;
+        width: 50%;
+        max-width: 200px;
+        box-sizing: border-box;
+    }
+    .back-btn:hover {
+        background-color: #000;
+        color: #fff;
+        box-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    }
+    .img-container {
+        display: flex;
+        text-align: center;
+	}
+    .img-container div {
+        flex: 1;
+    }
+    .img-container img {
+        max-width: 100%;
+        max-height: 90%;
+        padding: 20px;
+	}
+	.address, .phone, .hours, .chart {
+        background-color: #403620;
+        color: #fff;
+        border-radius: 10px;
+        box-shadow: 2px 2px 2px rgba(0,0,0,0.3);
+        padding: 20px;
+        margin-bottom: 20px;
+        text-align: center;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    .address h2, .phone h2, .hours h2, .chart h2 {
+        font-size: 24px;
+        margin-top: 0;
+        margin-bottom: 10px;
+    }
+    .address p, .phone p, .hours p, .chart p {
+        font-size: 16px;
+        margin: 0;
+    }
+    .histogram {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      height: 300px;
+      margin-bottom: 20px;
+    }
+    .bar {
+      width: calc(100% / 7 - 10px);
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+    }
+    .x-axis {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 14px;
+      color: #777;
+    }
+	</style>
+<body>
+  
+  <header>
+    <nav class="navbar sticky-top navbar-expand-md navbar-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/home">
+          <img src="/../images/coffee.png" width="30" height="30" alt="">
+        </a>
+        <button class="navbar-toggler" style="background-color: var(--secondary)" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" style="color: var(--accent); font-family:'Avenir', sans-serif;" href="/customdrink">Custom Drink</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" style="color: var(--accent); font-family:'Avenir', sans-serif;" href="/history">Cafe History</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" style="color: var(--accent); font-family:'Avenir', sans-serif;" href="/map">Map</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" style="color: var(--accent); font-family:'Avenir', sans-serif;" href="/">Log Out</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+   </header>
+
+	<div class="container">
+    <br>
+		<a href="/map" class="back-btn">Back</a>
+		<h1>Flames Coffee</h1>
+		<div class="img-container">
+      <div><img src="../images/f1.jpeg" alt="flames"></div>
+      <div><img src="../images/f2.jpeg" alt="fire"></div>
+      <div><img src="../images/f3.jpeg" alt="fuego"></div>
+		</div>
+		<div class="address">
+			<h2>Address</h2>
+			<p>1000000 South Hall Rd.</p>
+			<p>Berkeley, CA 94704</p>
+    </div>
+    <div class="phone">
+      <h2>Phone</h2>
+      <p>(510) 642-5215</p>
+    </div>
+    <div class="hours">
+      <h2>Hours</h2>
+      <p>Open 24hrs Everyday</p>
+    </div>
+      <div class="chart">
+        <h2>Busiest Times Today</h2>
+        <div class="histogram">
+          <div class="bar" style="height: 100px;"></div>
+          <div class="bar" style="height: 40px;"></div>
+          <div class="bar" style="height: 80px;"></div>
+          <div class="bar" style="height: 220px;"></div>
+          <div class="bar" style="height: 260px;"></div>
+          <div class="bar" style="height: 220px;"></div>
+          <div class="bar" style="height: 200px;"></div>
+        </div>
+        <div class="x-axis">
+          <span>12am</span>
+          <span>4am</span>
+          <span>8am</span>
+          <span>12pm</span>
+          <span>4pm</span>
+          <span>8pm</span>
+          <span>12am</span>
+      </div>
+    </div>
+  </div>
+  
+  <script src="https://kit.fontawesome.com/your_fontawesome_kit_id.js" crossorigin="anonymous"></script>
+  <script src="/vendors/jquery/jquery-3.3.1.min.js"></script>
+  <script src="/vendors/jquery-ui/jquery-ui.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="/vendors/bootstrap/js/bootstrap.js"></script>
+
+</body>
+</html>

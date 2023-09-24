@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="/vendors/bootstrap/css/bootstrap.css" />
+  <link rel="stylesheet" href="css/main.css">
+  <title>Order Custom Drink | Coffee Stop by Team 20</title>
+</head>
+<style>
+  h1 {
+    margin-top: 1.5rem;
+    font-size: 2.0rem;
+    font-weight: bold;
+  }
+  h4 {
+    font-family:'Avenir', sans-serif;
+  }
+  .btn-show {
+    background-color: var(--secondary);
+    color: var(--accent);
+    font-family:'Avenir', sans-serif;
+  }
+
+  .btn-delete {
+    background-color: white;
+    color: var(--primary);
+    border-color: var(--primary);
+    font-family:'Avenir', sans-serif;
+  }
+
+  .btn-add-drink {
+    background-color: var(--primary);
+    color: var(--accent);
+    font-family:'Avenir', sans-serif;
+  }
+  
+  .card-title {
+    font-weight: bold;
+  }
+
+  p {
+    font-family:'Avenir', sans-serif;
+    font-weight: light;
+    font-size: medium;
+  }
+
+</style>
+<body>
+  <header>
+    <nav class="navbar sticky-top navbar-expand-md navbar-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/home">
+          <img src="/../images/coffee.png" width="30" height="30" alt="">
+        </a>
+        <button class="navbar-toggler" style="background-color: var(--secondary)" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" style="color: var(--accent); font-family:'Avenir', sans-serif;" href="/customdrink">Custom Drink</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" style="color: var(--accent); font-family:'Avenir', sans-serif;" href="/history">Cafe History</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" style="color: var(--accent); font-family:'Avenir', sans-serif;" href="/map">Map</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" style="color: var(--accent); font-family:'Avenir', sans-serif;" href="/">Log Out</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <main>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 mx-auto">
+        <h1 class="text-center mt-5">Recent Custom Drinks</h1>
+        <hr>
+        <div id="custom-drinks-list">
+        </div>
+        <div id="caramel-latte" class="card mb-1">
+          <div class="card-body d-flex align-items-start justify-content-between">
+            <div class="flex-grow-1">
+              <h5 class="card-title mb-1">Caramel Latte</h5>
+              <p class="card-subtitle mb-1 text-muted">at Flames Coffee</p>
+            </div>
+            <div class="ml-3">
+              <a href="/show-caramel-latte" class="btn btn-sm btn-show">Show</a>
+              <a href="#" onclick="removeCaramelLatte()" class="btn btn-sm btn-delete">Delete</a>
+            </div>
+          </div>
+        </div>
+        <div id="cappucino" class="card mb-1">
+          <div class="card-body d-flex align-items-start justify-content-between">
+            <div class="flex-grow-1">
+              <h5 class="card-title mb-1">Cappucino</h5>
+              <p class="card-subtitle mb-1 text-muted">at Starbucks</p>
+            </div>
+            <div class="ml-3">
+              <a href="/show-cappucino" class="btn btn-sm btn-show">Show</a>
+              <a href="#" onclick="removeCappucino()" class="btn btn-sm btn-delete">Delete</a>
+            </div>
+          </div>
+        </div>
+        <div id="espresso" class="card mb-1">
+          <div class="card-body d-flex align-items-start justify-content-between">
+            <div class="flex-grow-1">
+              <h5 class="card-title mb-1">Espresso</h5>
+              <p class="card-subtitle mb-1 text-muted">at Peets</p>
+            </div>
+            <div class="ml-3">
+              <a href="/show-espresso" class="btn btn-sm btn-show">Show</a>
+              <button onclick="removeEspresso()" class="btn btn-sm btn-delete">Delete</button>
+            </div>
+          </div>
+        </div>
+        <div class="text-center mt-4">
+          <a href="/add" class="btn btn-lg btn-add-drink">Add New Drink</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  </main>
+  <script>
+    // localStorage.clear()
+    const customDrinks = JSON.parse(localStorage.getItem('customDrinks')) || [];
+
+    const customDrinksList = document.getElementById('custom-drinks-list');
+    customDrinks.forEach(customDrinkData => {
+      const customDrink = JSON.parse(customDrinkData);
+
+      const customDrinkCard = `
+        <div id="drink-${customDrink.id}" class="card added-drink mb-1">
+          <div class="card-body d-flex align-items-start justify-content-between">
+            <div class="flex-grow-1">
+              <h5 class="card-title mb-1">${customDrink.name}</h5>
+              <p class="card-subtitle mb-1 text-muted">at ${customDrink.location}</p>
+            </div>
+            <div class="ml-3">
+              <button id="show-new-drink" class="btn btn-sm btn-show" data-drink='${JSON.stringify(customDrink)}''>Show</button>
+              <a href="#" id="remove-${customDrink.id}" class="btn btn-sm btn-delete">Delete</a>
+            </div>
+          </div>
+        </div>`;
+
+      // Add the custom drink card to the custom drinks list
+      customDrinksList.insertAdjacentHTML('beforeend', customDrinkCard);       
+    });
+
+
+
+    // Loop through all the custom drink cards in the list and add a delete button to each one
+    const cards = customDrinksList.querySelectorAll('.added-drink');
+    cards.forEach(card => {
+      const deleteButton = card.querySelector(`.btn-delete`);
+
+      // Add an onclick event handler to the delete button
+      deleteButton.onclick = () => {
+        // Set the display of the custom drink card to "none"
+        const cardId = card.getAttribute('id');
+        const customDrinkId = cardId.split('-')[1];
+        const cardToRemove = document.getElementById(cardId);
+        cardToRemove.style.display = 'none';
+
+        // Remove the custom drink from local storage
+        const updatedCustomDrinks = customDrinks.filter(customDrinkData => {
+          drink = JSON.parse(customDrinkData);
+          return drink.id.toString().localeCompare(customDrinkId) !== 0;
+        });
+        localStorage.setItem('customDrinks', JSON.stringify(updatedCustomDrinks));
+      };
+
+      const showButton = card.querySelector(`.btn-show`);
+      // const drinkData = showButton.getAttribute('data-drink');
+      // console.log("drinkData is " + drinkData);
+      showButton.onclick = () => {
+        const drinkData = showButton.getAttribute('data-drink');
+        //  console.log("drinkData is " + drinkData);
+        localStorage.setItem('currentDrinkData', drinkData);
+        window.location.href = '/show-new-drink';
+      }
+
+    });
+
+    
+    // Add an onclick event handler to the "Show" button
+    // const showButtons = document.querySelectorAll('#show-new-drink');
+    // showButtons.forEach(button => {
+    //   button.onclick = (event) => {
+    //     const drinkData = event.target.getAttribute('data-drink');
+    //     console.log("drinkData is " + drinkData);
+    //     localStorage.setItem('currentDrinkData', drinkData);
+    //     window.location.href = '/show-new-drink';
+    //   }
+    // });
+
+     function removeCaramelLatte() {
+      const caramel = document.getElementById('caramel-latte');
+      caramel.style.display = 'none';
+     }
+
+     function removeCappucino() {
+      const cappucino = document.getElementById('cappucino');
+      cappucino.style.display = 'none';
+     }
+
+     function removeEspresso() {
+      const espresso = document.getElementById('espresso');
+      espresso.style.display = 'none';
+     }
+
+     
+    
+  </script>
+  
+  <script src="/vendors/jquery/jquery-3.3.1.min.js"></script>
+  <script src="/vendors/jquery-ui/jquery-ui.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="/vendors/bootstrap/js/bootstrap.js"></script>
+</body>
+</html>
