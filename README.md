@@ -16,6 +16,10 @@ User can view previous cafes they marked and see what their initial impressions.
 #### Adding a Custom Drink
 User can select different options for customizing their coffee and provides a visual representation for the barista.
 
+![alt text](https://github.com/cj-hines/coffee-stop/siteimages/capacity.jpeg?raw=true)
+![alt text](https://github.com/cj-hines/coffee-stop/siteimages/order.jpg?raw=true)
+![alt text](https://github.com/cj-hines/coffee-stop/siteimages/history.jpg?raw=true)
+
 ## The Developers
 #### Ria 
 Navigation Bar, Cafe History, Tap
