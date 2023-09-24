@@ -1,4 +1,4 @@
-# cs160-final-project
+# Coffee Stop
 CS160 Final Project "Coffee Stop"
 
 ## Mission Statement
